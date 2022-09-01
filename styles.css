@@ -1,6 +1,78 @@
-.container{
+body{
+    margin: 0;
+    background-image: url(./images/img5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+}
+
+
+.first-container{
+    margin: 5rem auto;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    
+    width: 60%;
+    background: linear-gradient(180deg, #fff, #f8f8f8);
+    border-radius: 1rem;
+    padding: 2rem;
 }
+
+#bill-amount, #cash-given{
+    display: block;
+    margin: 1em auto;
+    border: 1px solid black;
+    height: 30px;
+    width: 350px;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 1em;
+    text-align: left !important;
+    margin: 1em auto;
+}
+
+#notes-list{
+    font-weight: 600;
+}
+
+
+#check-button{
+    padding: 0.5em 2em;
+    border-radius: 1rem;
+    border-color: transparent;
+    background-color: #4b5563;
+    color: white;
+}
+
+#error-message{
+    color: red;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+caption{
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+
+@media only screen and (max-width: 760px){
+    .first-container{
+        margin: 3rem auto;
+        width: 80%;
+        padding: 1em;
+    }
+
+    table{
+        overflow: auto;
+        display: block;
+    }
+}
+

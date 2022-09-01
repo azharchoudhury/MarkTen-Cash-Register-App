@@ -1,11 +1,19 @@
-let billAmount = document.querySelector("#bill-amount");
-let cashGiven = document.querySelector("#cash-given");
-let checkButton = document.querySelector("#check-button");
-let errorMessage = document.querySelector("#error-message");
-let noOfNotes = document.querySelectorAll(".no-of-notes");
+const billAmount = document.querySelector("#bill-amount");
+const cashGiven = document.querySelector("#cash-given");
+const checkButton = document.querySelector("#check-button");
+const errorMessage = document.querySelector("#error-message");
+const noOfNotes = document.querySelectorAll(".no-of-notes");
+const secondContainer = document.querySelector(".second-container");
+
+secondContainer.style.display = "none";
 
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
+billAmount.addEventListener('input', inputHandler);
+
+function inputHandler() {
+    secondContainer.style.display = "block";
+}
 
 checkButton.addEventListener("click", function validateBillAndCashAmount() {
     let cashGivenNum = Number(cashGiven.value);
@@ -14,21 +22,25 @@ checkButton.addEventListener("click", function validateBillAndCashAmount() {
     console.log(cashGivenNum);
     console.log(55);
     hideMessage();
-    if (billAmountNum === 0 || cashGivenNum === 0) {
-        showMessage("Enter valid inputs");
-    } else {
-        if (billAmountNum > 0) {
-            if (cashGivenNum > billAmountNum) {
-                const amountToBeReturned = cashGivenNum - billAmountNum;
-                calculateChange(amountToBeReturned);
-            } else if (cashGivenNum === billAmountNum) {
-                showMessage("No cash to be given");
-            } else {
-                showMessage("Do you want to wash the plates?");
-            }
+    if (billAmountNum != '' || cashGivenNum != '') {
+        if (billAmountNum === 0 || cashGivenNum === 0) {
+            showMessage("Enter valid inputs");
         } else {
-            showMessage("Enter a valid amount");
+            if (billAmountNum > 0) {
+                if (cashGivenNum > billAmountNum) {
+                    const amountToBeReturned = cashGivenNum - billAmountNum;
+                    calculateChange(amountToBeReturned);
+                } else if (cashGivenNum === billAmountNum) {
+                    showMessage("No cash to be given");
+                } else {
+                    showMessage("Do you want to wash the plates?");
+                }
+            } else {
+                showMessage("Enter a valid amount");
+            }
         }
+    } else {
+        showMessage("Please enter all the fields");
     }
 });
 
