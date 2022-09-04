@@ -10,4 +10,4 @@
 
 This is how the app looks 👇🏻
 
-![MarkTen Cash Register App image](./MarkTen%20Cash%20Register%20App%20image.PNG)
+![MarkTen Cash Register App Demo image](MarkTen%20App%20Demo%20image.PNG)
