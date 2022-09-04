@@ -25,7 +25,7 @@ checkButton.addEventListener("click", function validateBillAndCashAmount() {
     hideMessage();
     if (billAmountNum != '' || cashGivenNum != '') {
         if (billAmountNum === 0 || cashGivenNum === 0) {
-            showMessage("Enter valid inputs");
+            showMessage("Please enter valid inputs");
         } else {
             if (billAmountNum > 0) {
                 if (cashGivenNum > billAmountNum) {
