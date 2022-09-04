@@ -4,6 +4,7 @@ const checkButton = document.querySelector("#check-button");
 const errorMessage = document.querySelector("#error-message");
 const noOfNotes = document.querySelectorAll(".no-of-notes");
 const secondContainer = document.querySelector(".second-container");
+const changeMoney = document.querySelector("#change");
 
 secondContainer.style.display = "none";
 
@@ -29,6 +30,7 @@ checkButton.addEventListener("click", function validateBillAndCashAmount() {
             if (billAmountNum > 0) {
                 if (cashGivenNum > billAmountNum) {
                     const amountToBeReturned = cashGivenNum - billAmountNum;
+                    changeMoney.innerText = "₹"+amountToBeReturned;
                     calculateChange(amountToBeReturned);
                 } else if (cashGivenNum === billAmountNum) {
                     showMessage("No cash to be given");
