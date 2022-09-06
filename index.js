@@ -33,6 +33,7 @@ checkButton.addEventListener("click", function validateBillAndCashAmount() {
                     changeMoney.innerText = "₹"+amountToBeReturned;
                     calculateChange(amountToBeReturned);
                 } else if (cashGivenNum === billAmountNum) {
+                    const amountToBeReturned = cashGivenNum - billAmountNum;
                     changeMoney.innerText = "₹"+amountToBeReturned;
                     showMessage("No cash to be given");
                 } else {
